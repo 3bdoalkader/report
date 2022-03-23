@@ -101,7 +101,7 @@ class AddReportController extends GetxController {
     await mRecorder!.stopRecorder().then((value) {
       _timer?.cancel();
 
-      recorderTxt="${duration~/60}:${duration%60}";
+      recorderTxt = "${duration ~/ 60}:${duration % 60}";
       _mplaybackReady = true;
       audioPath = value!;
       update();

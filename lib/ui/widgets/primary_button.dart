@@ -43,8 +43,8 @@ class PrimaryButton extends StatelessWidget {
           child: Center(
             child: isLoading
                 ? const Center(
-              child: AppLoader(),
-            )
+                    child: AppLoader(),
+                  )
                 : Text(
                     title,
                     style: AppStyle.whiteStyle.copyWith(fontSize: 14),

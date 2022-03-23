@@ -64,8 +64,7 @@ class _AddReportScreenState extends State<AddReportScreen> {
                         initValue: controller.reportContent,
                       ),
                       if (controller.audioPath != '')
-                        Row(
-                            crossAxisAlignment:CrossAxisAlignment.center,children: [
+                        Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                           GestureDetector(
                             onTap: controller.mPlayer!.isPlaying ? controller.stopPlayer : controller.play,
                             child: Icon(
@@ -74,31 +73,36 @@ class _AddReportScreenState extends State<AddReportScreen> {
                               size: 40,
                             ),
                           ),
-                          Padding(padding:const EdgeInsets.only(top: 8),child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Duration ${controller.recorderTxt} min"),
-                              Row(
-                                children: [
-                                  GestureDetector(
-                                    onTap: controller.mPlayer!.isPlaying ? controller.stopPlayer : controller.play,
-                                    child: Text(
-                                      controller.mPlayer!.isPlaying? "Stop record":"Play record",
-                                      style: AppStyle.darkBlueStyle.copyWith(fontSize: 15),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Duration ${controller.recorderTxt} min"),
+                                Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: controller.mPlayer!.isPlaying ? controller.stopPlayer : controller.play,
+                                      child: Text(
+                                        controller.mPlayer!.isPlaying ? "Stop record" : "Play record",
+                                        style: AppStyle.darkBlueStyle.copyWith(fontSize: 15),
+                                      ),
                                     ),
-                                  ),
-                                  const  SizedBox(width: 8,),
-                                  GestureDetector(
-                                    onTap: controller.removeAudio,
-                                    child: Text(
-                                      "remove record",
-                                      style: AppStyle.darkBlueStyle.copyWith(fontSize: 15),
+                                    const SizedBox(
+                                      width: 8,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),),
+                                    GestureDetector(
+                                      onTap: controller.removeAudio,
+                                      child: Text(
+                                        "remove record",
+                                        style: AppStyle.darkBlueStyle.copyWith(fontSize: 15),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ]),
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.start,
@@ -116,7 +120,8 @@ class _AddReportScreenState extends State<AddReportScreen> {
                         const SizedBox(
                           height: 150,
                         ),
-                      Center(child:PrimaryButton(
+                      Center(
+                          child: PrimaryButton(
                         onTap: () {
                           if (!_formKey.currentState!.validate()) {
                             return;
