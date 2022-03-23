@@ -117,7 +117,12 @@ class _AddReportScreenState extends State<AddReportScreen> {
                           height: 150,
                         ),
                       PrimaryButton(
-                        onTap: controller.submit,
+                         onTap: () {
+                      if (!_formKey.currentState!.validate()) {
+                      return;
+                      }
+                      controller.submit();
+                      },
                         title: "Submit",
                       )
                     ],
