@@ -116,15 +116,15 @@ class _AddReportScreenState extends State<AddReportScreen> {
                         const SizedBox(
                           height: 150,
                         ),
-                      PrimaryButton(
-                         onTap: () {
-                      if (!_formKey.currentState!.validate()) {
-                      return;
-                      }
-                      controller.submit();
-                      },
+                      Center(child:PrimaryButton(
+                        onTap: () {
+                          if (!_formKey.currentState!.validate()) {
+                            return;
+                          }
+                          controller.submit();
+                        },
                         title: "Submit",
-                      )
+                      ))
                     ],
                   ),
                 ),
